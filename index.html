@@ -1,1 +1,32 @@
-Hello world this is my website.
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Sample SPA using HashChange</title>
+    <script type="text/javascript" charset="utf-8">
+      var handleHash = function(){
+        document.body.innerHTML = document.querySelector(location.hash).innerHTML;
+      };
+      window.addEventListener("hashchange", handleHash);
+      window.addEventListener("load", handleHash);
+    </script>
+    <script type="html/template" id="p1">
+      Page 1
+      <a href="#p2">Alter it again</a>
+    </script>
+    <script type="html/template" id="p2">
+      Page 2
+      <a href="#p3">Alter it again</a>
+    </script>
+    <script type="html/template" id="p3">
+      Page 3
+      <a href="#p1">Alter it again</a>
+    </script>
+  </head>
+  <body>
+    <p>
+      Ahhh. No page loaded!!!??!?!?!
+    </p>
+    <a href="#p1">Click here to alter the hash</a>
+  </body>
+</html>
